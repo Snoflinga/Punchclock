@@ -47,12 +47,12 @@ public class PunchClock {
     public double getOverTime() {
         double minutes = (double) this.logInTime.until(this.logOutTime, ChronoUnit.MINUTES);
         final int WORKDAY = 510;
-        double overTime = minutes - WORKDAY;
-        if (overTime > 120){
-            return overTime * 2;
-        } else if (overTime > 0 && overTime < 120){
-            return overTime * 1.5;
+        double workTime = minutes - WORKDAY;
+        if (workTime > 120){
+            return workTime * 2;
+        } else if (workTime > 0 && workTime < 120){
+            return workTime * 1.5;
         }
-        return overTime;
+        return workTime;
     }
 }
