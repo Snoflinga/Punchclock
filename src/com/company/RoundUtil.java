@@ -28,6 +28,11 @@ public class RoundUtil {
     }
 
     public int roundUp(int i) {
+
+        if (i < 0) {
+            throw new IllegalArgumentException("Not a valid number:" + i);
+        }
+
         int lastDigit = i;
         if (lastDigit == 0){
             return 0;

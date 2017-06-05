@@ -71,4 +71,11 @@ public class RoundUtilTest {
         int expected4 = 15;
         assertEquals("The integers after rounding up doesn't match", expected4, roundUtil.roundUp(test4));
     }
+
+    @Test (expected = IllegalArgumentException.class)
+    public void testRoudUp_BadTypeOfNumberIsEntered_ExceptionIsThrown() {
+        int badNumber = -1;
+
+        roundUtil.roundUp(badNumber);
+    }
 }
